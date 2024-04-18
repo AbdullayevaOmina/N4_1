@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "first_name": "Otabek",
+      "last_name": "Rustamov",
+      "age": 12,
+      "email": "otash777@gmail.com",
+      "password": "12345678",
+      "image": "https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+      "id": 2
+    },
+    {
+      "firstName": "asedfasdfdas",
+      "lastName": "fgadsfasdf1",
+      "age": "34",
+      "email": "ahmadweb@gmail.com",
+      "password": "2314234dfxbsadgf",
+      "imgUrl": "asdfasdfawsgfa",
+      "id": 3
+    }
+  ]
+}
