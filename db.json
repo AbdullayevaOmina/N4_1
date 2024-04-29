@@ -1,22 +1,44 @@
 {
   "users": [
     {
-      "first_name": "Otabek",
-      "last_name": "Rustamov",
-      "age": 12,
-      "email": "otash777@gmail.com",
-      "password": "12345678",
-      "image": "https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+      "firstName": "Eshmat",
+      "lastName": "Toshmatov",
+      "phone": "+9998 (90) 123-45-67",
+      "active": "false",
+      "count": 7,
       "id": 2
     },
     {
-      "firstName": "asedfasdfdas",
-      "lastName": "fgadsfasdf1",
-      "age": "34",
-      "email": "ahmadweb@gmail.com",
-      "password": "2314234dfxbsadgf",
-      "imgUrl": "asdfasdfawsgfa",
+      "firstName": "Omina",
+      "lastName": "Abdullayeva",
+      "phone": "+998 99 359 07 26",
+      "active": false,
+      "count": "5",
       "id": 3
+    },
+    {
+      "firstName": "Otabek",
+      "lastName": "Rustamov",
+      "phone": "+998901234567",
+      "active": true,
+      "count": "8",
+      "id": 4
+    },
+    {
+      "firstName": "John ",
+      "lastName": "Doe",
+      "phone": "+998990553008",
+      "active": true,
+      "count": 0,
+      "id": 5
+    },
+    {
+      "firstName": "qewrwr",
+      "lastName": "wqerq",
+      "phone": "+998901234567",
+      "active": false,
+      "count": "5",
+      "id": 6
     }
   ]
 }

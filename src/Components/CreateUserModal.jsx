@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Button, Form, Modal, Container, Row, Col } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 
 function CreateUserModal({ appendUser }) {
   axios.defaults.baseURL = "http://localhost:3000";
@@ -9,10 +9,9 @@ function CreateUserModal({ appendUser }) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    age: "",
-    email: "",
-    password: "",
-    imgUrl: "",
+    phone: "",
+    active: false,
+    count: 0,
   });
 
   const handleClose = () => setShow(false);
@@ -20,9 +19,10 @@ function CreateUserModal({ appendUser }) {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+    const newValue = name === "active" ? value === "true" : value; // value boolean bo'lishi kerak
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value,
+      [name]: newValue,
     }));
   };
 
@@ -33,15 +33,15 @@ function CreateUserModal({ appendUser }) {
       setFormData({
         firstName: "",
         lastName: "",
-        age: "",
-        email: "",
-        password: "",
-        imgUrl: "",
+        phone: "",
+        active: false,
+        count: 0,
       });
-      console.log(formData.firstName, formData.lastName);
       handleClose();
     } catch (error) {
       console.error("Error creating user:", error);
+    } finally {
+      handleClose()
     }
   };
 
@@ -79,42 +79,35 @@ function CreateUserModal({ appendUser }) {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Age:</Form.Label>
+              <Form.Label>Phone</Form.Label>
+              <Form.Control
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="bg-secondary-subtle"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Active:</Form.Label>
+              <Form.Select
+                name="active"
+                value={formData.active.toString()}
+                onChange={handleInputChange}
+                className="bg-secondary-subtle"
+              >
+                <option value="" disabled>
+                  Select
+                </option>
+                <option value="true">True</option>
+                <option value="false">False</option>
+              </Form.Select>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Count:</Form.Label>
               <Form.Control
                 type="number"
-                name="age"
-                value={formData.age}
-                onChange={handleInputChange}
-                className="bg-secondary-subtle"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Email:</Form.Label>
-              <Form.Control
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="name@example.com"
-                className="bg-secondary-subtle"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Password:</Form.Label>
-              <Form.Control
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                className="bg-secondary-subtle"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Img URL:</Form.Label>
-              <Form.Control
-                type="text"
-                name="imgUrl"
-                value={formData.imgUrl}
+                name="count"
+                value={formData.count}
                 onChange={handleInputChange}
                 className="bg-secondary-subtle"
               />
